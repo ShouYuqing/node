@@ -18,19 +18,17 @@ function p()
 {
     global.console.log("my first app!");
 }
-logger.log("122"); // call a module
+//logger.log("122"); // call a module
 
 var totalmem = os.totalmem();
 //Template string
 console.log(`Total Memory: ${totalmem}`); // print the total memory
 
 // Listen an event with event argument and arrow function
-my_eventemitter = new EventEmitter();
+const my_eventemitter = new logger();
 my_eventemitter.on("message_logged", (arg)=>{
-    console.log("received message!", arg);
+    console.log("received message by the on()!", arg);
 });
 
-// Raise an event
-my_eventemitter.emit("message_logged", {id:1, url: "./random"});
-
+my_eventemitter.log("my message")
 
