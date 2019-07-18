@@ -2,7 +2,6 @@ const logger = require("./logger.js"); // load a module, and use "const"
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
-const EventEmitter = require("events")
 const http = require("http");
 const _ = require("underscore");
 
