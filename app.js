@@ -4,6 +4,7 @@ const os = require("os");
 const fs = require("fs");
 const http = require("http");
 const _ = require("underscore");
+const express = require("express");
 
 const files = fs.readdirSync("./"); // return all the files' names in the folder
 console.log(files);
@@ -53,3 +54,14 @@ server.listen(port = 3000); // listen for port 3000
 
 console.log("Listening at port 3000...");
 console.log("-------------------------------");
+
+// express
+const app = express();
+app.get('/', (req, res)=>{
+    res.send("Hello World");
+})
+
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>{
+    console.log("Listening at port ${port}");
+})
