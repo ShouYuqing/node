@@ -30,3 +30,8 @@ app.put('api/courses/:id', (req, res)=>{
     const course = courses.find(req.params.id);
     course.name = req.body.name
 })
+
+// DELETE
+app.delete('api/courses/:id', (req, res)=>{
+    
+})
