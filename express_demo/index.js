@@ -19,7 +19,7 @@ const courseSchema = new mongoose.Schema({
 // create class
 const Course = mongoose.model('Course', courseSchema);
 
-// create object
+// create document object and save it 
 async function createCourse()
 {
     // Object
@@ -32,8 +32,12 @@ async function createCourse()
     const result = await course.save();
     console.log(result);
 }
-
 createCourse();
+
+async function getCourse(){
+    const courses = await Course.find({author: 'Mosh'});
+    console.log(courses);
+}
 
 
 /*
