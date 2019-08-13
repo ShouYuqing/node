@@ -1,11 +1,13 @@
-/*
 // utility of mongodb
 const mongoose = require('mongoose');
 
+// connect to the database
 mongoose.connect('mongodb://localhost/playground')
     .then(() => console.log('Connected to the Mongodb...'))
     .catch(err => console.error('Can not connect to the Mongodb...'))
 
+
+// create schema
 const courseSchema = new mongoose.Schema({
     name: String,
     author: String,
@@ -14,15 +16,16 @@ const courseSchema = new mongoose.Schema({
     isPublished: Boolean
 });
 
-// Class
+// create class
 const Course = mongoose.model('Course', courseSchema);
 
+// create object
 async function createCourse()
 {
     // Object
     const course = new Course({
         name: 'course',
-        author: 'Mosh',
+        author: 'Yuqing Shou',
         tags: ['node', 'backend'],
         isPublished: true
     });
@@ -31,9 +34,9 @@ async function createCourse()
 }
 
 createCourse();
-*/
 
 
+/*
 console.log("Start...");
 // Pormise
 const p = new Promise((resolve, reject) =>{
@@ -53,3 +56,4 @@ p.then((a) =>{
 .then((a) =>{
     console.log(a);
 });
+*/
