@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/playground')
 
 // create schema
 const courseSchema = new mongoose.Schema({
-    name: String,
+    name: {type: String, required: true},// validation of data
     author: String,
     tags: [String],
     date: {type: Date, default: Date.now},
@@ -29,8 +29,15 @@ async function createCourse()
         tags: ['node', 'backend'],
         isPublished: true
     });
-    const result = await course.save();
-    console.log(result);
+    try
+    {
+        const result = await course.save();
+        console.log(result);
+    }
+    catch(ex)
+    {
+        console.log(ex.message);
+    } 
 }
 createCourse();
 
@@ -61,3 +68,4 @@ p.then((a) =>{
     console.log(a);
 });
 */
+
