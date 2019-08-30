@@ -6,10 +6,6 @@ mongoose.connect('mongodb://localhost/playground')
     .then(() => console.log('Connected to the Mongodb...'))
     .catch(err => console.error('Can not connect to the Mongodb...'))
 
-
-
-    
-
 // create schema
 const courseSchema = new mongoose.Schema({
     name: {type: String, required: true},// validation of data
